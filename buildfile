@@ -33,8 +33,7 @@ define 'shade-cli' do
 
   doc.options.merge!('Xdoclint:none' => true)
 
-  package(:jar)
-  package(:jar, :classifier => 'all').tap do |jar|
+  package(:jar).tap do |jar|
     jar.with :manifest => { 'Main-Class' => 'org.realityforge.shade.Main' }
     jar.merge(artifacts(DEPS))
   end
