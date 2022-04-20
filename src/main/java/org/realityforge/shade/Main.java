@@ -13,7 +13,6 @@ import org.apache.maven.plugins.shade.DefaultShader;
 import org.apache.maven.plugins.shade.ShadeRequest;
 import org.apache.maven.plugins.shade.relocation.Relocator;
 import org.apache.maven.plugins.shade.relocation.SimpleRelocator;
-import org.codehaus.plexus.logging.console.ConsoleLogger;
 import org.realityforge.getopt4j.CLArgsParser;
 import org.realityforge.getopt4j.CLOption;
 import org.realityforge.getopt4j.CLOptionDescriptor;
@@ -225,8 +224,6 @@ public class Main
     request.setRelocators( relocators );
     request.setResourceTransformers( Collections.emptyList() );
     request.setUberJar( target );
-    final DefaultShader shader = new DefaultShader();
-    shader.enableLogging( new ConsoleLogger() );
-    shader.shade( request );
+    new DefaultShader().shade( request );
   }
 }
