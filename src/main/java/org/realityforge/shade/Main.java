@@ -9,7 +9,6 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
 import org.apache.maven.plugins.shade.DefaultShader;
 import org.apache.maven.plugins.shade.ShadeRequest;
 import org.apache.maven.plugins.shade.relocation.Relocator;
@@ -31,7 +30,6 @@ public class Main
   private static final int INPUT_OPT = 2;
   private static final int OUTPUT_OPT = 3;
   private static final int RELOCATION_OPT = 'r';
-  @Nonnull
   private static final CLOptionDescriptor[] OPTIONS = new CLOptionDescriptor[]{
     new CLOptionDescriptor( "input",
                             CLOptionDescriptor.ARGUMENT_REQUIRED,
@@ -63,14 +61,12 @@ public class Main
   private static final int SUCCESS_EXIT_CODE = 0;
   private static final int ERROR_PARSING_ARGS_EXIT_CODE = 2;
   private static final int ERROR_OTHER_EXIT_CODE = 4;
-  @Nonnull
   private static final Logger c_logger = Logger.getAnonymousLogger();
   private static File c_input;
   private static File c_output;
-  @Nonnull
   private static final Map<String, String> c_relocations = new HashMap<>();
 
-  public static void main( @Nonnull final String[] args )
+  public static void main( final String[] args )
   {
     setupLogger();
     if ( !processOptions( args ) )
@@ -101,7 +97,7 @@ public class Main
     c_logger.addHandler( handler );
   }
 
-  private static boolean processOptions( @Nonnull final String[] args )
+  private static boolean processOptions( final String[] args )
   {
     // Parse the arguments
     final CLArgsParser parser = new CLArgsParser( args, OPTIONS );
@@ -215,9 +211,7 @@ public class Main
     c_logger.log( Level.INFO, msg.toString() );
   }
 
-  public static void shade( @Nonnull final File source,
-                            @Nonnull final File target,
-                            @Nonnull final Map<String, String> relocations )
+  public static void shade( final File source, final File target, final Map<String, String> relocations )
     throws Exception
   {
     final List<Relocator> relocators = relocations

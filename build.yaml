@@ -6,7 +6,6 @@ artifacts:
 
   getopt4j: org.realityforge.getopt4j:getopt4j:jar:1.3
 
-  javax_annotation: org.realityforge.javax.annotation:javax.annotation:jar:1.0.1
 
   maven_plugin_api: org.apache.maven:maven-plugin-api:jar:3.3.9
   sisu_plexus: org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.3.2

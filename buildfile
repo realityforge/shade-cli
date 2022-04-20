@@ -13,8 +13,7 @@ DEPS=[:getopt4j,
       :plexus_utils,
       :asm_commons,
       :plexus_component_annotations,
-      :maven_shade_plugin,
-      :javax_annotation]
+        :maven_shade_plugin]
 
 desc 'CLI Wrapper For Maven Shade tool'
 define 'shade-cli' do
