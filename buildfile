@@ -38,6 +38,4 @@ define 'shade-cli' do
   end
   package(:sources)
   package(:javadoc)
-
-  ipr.add_component_from_artifact(:idea_codestyle)
 end
